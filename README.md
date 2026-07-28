@@ -93,3 +93,34 @@ Connecting it via PgAdmin4
 2) Copy the endpoint of the writer instance as host and add it in connection details.
 3) password: set to postgres
 
+-----------------GLUE CONNECTION-----------------
+Create a glue connection
+1) Go to glue connection, set amazon aurora, JDBC, set url: jdbc:postgresql://<your endpoint>/practice. You can select database instances by dropdown also. Set the database to the one created.
+2) Set the correct sg iceberg_aurora_sg. Make sure subnet is set to us-east-1a
+3) Create vpc endpoint, name it to s3-gateway-endpoint-for-glue as name
+    Select aws services
+    use service: com.amazonaws.us-east-1.s3 (type gateway)
+    vpc: default available
+    Add the route table (there will be a default option)
+    Create endpoint
+4) Create another vpc endpoint, name it to Glue-Interface-Endpoint
+    Select aws services
+    In services search, com.amazonaws.us-east-1.glue and select
+    Use the vpc from the dropdown
+    Enable private dns name
+    dns record type ipv4
+    select subnet, us-east-1a
+    add the sg, iceberg_aurora_sg
+    Set policy to Full access
+
+
+------------------GLUE ETL SCRIPT------------------
+1) Open Glue, ETL. Create a new job by script editor. Start fresh
+2) Name the job S3_TO_AURORA
+3) Add the iam role, glue-training-role
+4) Requested number of worker -> 2, default is 10
+5) Under Advanced Properties, set connection to the one which we created named Aurora Connection
+6) Upload .whl file present in this repo under assets in a s3 bucket, copy the s3 URI and paste it in
+Additional Python modules path
+7) 
+
