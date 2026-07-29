@@ -56,6 +56,7 @@ Name it as custom-inline-policy
 ---------------------ATHENA--------------------------
 1) Open athena, Create a workgroup. Name it as practice-workgroup
 2) Keep everything as default, Make sure the analytics engine is set to Athena SQL.
+3) Run SELECT * FROM orders in query editor, to make sure your data is loaded properly.
 
 
 --------------------AURORA RDS-----------------------
@@ -82,10 +83,11 @@ AWS AURORA INFRA CREATION
 16) For maintenance, set auto minor version upgrade to off.
 17) Create Database
 
+Open Security groups (VPC Feature)
 Modifying iceberg_aurora_sg
 1) Go to security groups, find the one we created
 2) Set an inbound rule, go to edit inbound rules and add a new rule
-3) Set type to all custom tcp and source as anywhere-ipv4, it should display 0.0.0.0/0 and keep
+3) Set type to custom tcp and source as anywhere-ipv4, it should display 0.0.0.0/0 and keep
 port range 0-65535
 4) Hit save rules
 
@@ -119,9 +121,10 @@ Create a glue connection
 1) Open Glue, ETL. Create a new job by script editor. Start fresh
 2) Name the job S3_TO_AURORA
 3) Add the iam role, glue-training-role
+3) Copy past the script glue_orders_to_aurora_postgres.py in this repo.
 4) Requested number of worker -> 2, default is 10
 5) Under Advanced Properties, set connection to the one which we created named Aurora Connection
 6) Upload .whl file present in this repo under assets in a s3 bucket, copy the s3 URI and paste it in
 Additional Python modules path
-7) 
+
 
