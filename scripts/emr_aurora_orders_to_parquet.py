@@ -13,7 +13,7 @@ from pyspark.sql import functions as F
 
 DEFAULT_JDBC_URL = (
     "jdbc:postgresql://"
-    "practice.cluster-ctn02zztyszd.us-east-1.rds.amazonaws.com:5432/"
+    "practice-v2.cluster-csjw8ueqyu2c.us-east-1.rds.amazonaws.com:5432/"
     "practice?sslmode=require"
 )
 

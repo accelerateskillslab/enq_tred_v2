@@ -56,7 +56,7 @@ Create 3 subfolders under this newly created bucket,
     b) logs
     c) scripts
 3) Upload the jar file present under assets of this repo to the drivers directory above.
-4) upload the script emr_aurora_orders_to_parquet.py from this repo to the bucket s3://emr-demo-bucket-{your aws account id}/scripts.
+4) upload the script emr_aurora_orders_to_parquet.py from this repo to the bucket s3://emr-demo-bucket-{your aws account id}/scripts. Change line number 16, and copy paste the cluster writer endpoint from postgres
 
 
 # EMR Creation
