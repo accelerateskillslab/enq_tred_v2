@@ -47,18 +47,6 @@ GROUP BY
     EXTRACT(MONTH FROM updated_at)
 order by 1, 2
 
-# Secrets Manager
-1) Open secrets manager, store a new secret
-    secret type: Other type of secret
-    Key Value pairs, plaintext copy paste
-
-{
-  "username": "postgres",
-  "password": "postgres"
-}
-    secret name: aurora_postgres_creds
-    Click next, keep everything default and store
-
 
 # S3 BUCKET CREATION
 1) Will reuse the same bucket, glue-test-bucket-{your aws account id} as landing bucket target.
