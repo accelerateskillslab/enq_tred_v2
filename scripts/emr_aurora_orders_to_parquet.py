@@ -20,7 +20,7 @@ DEFAULT_JDBC_URL = (
 DEFAULT_SOURCE_TABLE = "public.orders"
 
 DEFAULT_OUTPUT_PATH = (
-    "s3://glue-test-bucket-512357470856/curated/orders_kolkata/"
+    "s3://glue-test-bucket-316422224399/curated/orders_kolkata/"
 )
 
 JDBC_USERNAME = "postgres"
