@@ -162,6 +162,6 @@ Inline policy name as: EMRServerlessTrainingBucketAccess
     Under Spark properties
         Row 1
             Key: spark.jars
-            Value: s3://emr-demo-bucket-512357470856/drivers/postgresql-42.7.13.jar
+            Value: s3://emr-demo-bucket-{your aws account id}/drivers/postgresql-42.7.13.jar
 11) Run crawler to crawl the full data, keep the source as curated/orders_kolkata
 12) Check in athena to see if the data has landed or not
