@@ -154,7 +154,7 @@ Inline policy name as: EMRServerlessTrainingBucketAccess
     VPC: Set the default vpc
     Subnets: select us-east-1a and us-east-1b
     Security group: emr_serverless_sg
-    Create the application.
+    Create and start the application.
 10) Post application creation, open the application and go to submit job run
     Name the job: aurora_to_s3
     Runtime role: EMRServerlessOrdersRuntimeRole
