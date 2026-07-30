@@ -164,5 +164,7 @@ Inline policy name as: EMRServerlessTrainingBucketAccess
             Key: spark.jars
             Value: s3://emr-demo-bucket-{your aws account id}/drivers/postgresql-42.7.13.jar
     Do submit job run.
-11) Run crawler to crawl the full data, keep the source as curated/orders_kolkata
+11) Create a new crawler. Name it as emr-s3-aurora-crawler 
+12) Add a data source, set the location pointing to glue-test-bucket-{aws account id}/curated/orders_kolkata.
+Run crawler to crawl the full data, keep the source as curated/orders_kolkata. Use the glue training iam role. Target database: practice, Create crawler, run crawler. If data doesn't get populated, check the iam role permissions to see if the correct s3 bucket is present or not.
 12) Check in athena to see if the data has landed or not
